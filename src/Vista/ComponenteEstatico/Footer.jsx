@@ -15,8 +15,9 @@ export default function App() {
             <h5 className='text-uppercase'></h5>
 
             <p>
-      En LaraPizarro Ingeniería brindamos servicios de ingeniería de alta competencia, con soluciones innovadoras y a medida. Confíe en nuestro equipo para llevar sus proyectos al siguiente nivel. ¡Contáctenos hoy desde esta página!
-            </p>
+
+<h5>Nuestra Misión</h5>
+  Ser un socio estratégico en ingeniería estructural, entregando soluciones precisas y confiables, con un enfoque riguroso en la calidad, la seguridad y la optimización integral del diseño.             </p>
           </MDBCol>
 
           <MDBCol lg='6' md='12' className='mb-4 mb-md-0'>

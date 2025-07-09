@@ -2,9 +2,10 @@ import { Button } from "@mui/material";
 
 
 
-function Boton({nombreBoton}){
+function Boton(){
+    
     return(
-            <Button>{nombreBoton}</Button>
+            <Button>Ver todos los Proyectos</Button>
     );
 
 }

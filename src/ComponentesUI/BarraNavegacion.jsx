@@ -11,7 +11,7 @@ function BarraNavegacion(){
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home">Contacto</Nav.Link>
-            <Nav.Link href="#link">Trabajos</Nav.Link>
+            <Nav.Link href="#link">Proyectos</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/1">Otros</NavDropdown.Item>
             </NavDropdown>
