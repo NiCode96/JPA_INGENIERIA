@@ -13,14 +13,14 @@ function Principal() {
 
 
               <h1 style={{fontWeight: 'bolder'}}>Sobre Nosotros</h1>
-
-
               
         <br />
+
+        <p style={{fontSize :' 1.5vw', justifyContent: 'center'}}>
       En JPA Ingeniería nos especializamos en el cálculo estructural, ofreciendo soluciones de diseño en acero y hormigón armado para todo tipo de proyectos, desde obras menores hasta estructuras industriales.
-      
-      <br /><br />
       Nuestro equipo está compuesto por profesionales con sólida formación técnica y enfoque práctico, comprometidos con entregar proyectos seguros, eficientes y ajustados a norma, que respondan tanto a las necesidades del cliente como a las exigencias actuales de la ingeniería.
+        </p>
+
 
 </p>
    
@@ -31,11 +31,16 @@ function Principal() {
         <Grid item xs={12} md={6}>
     <img style={{width: '40%', height : 'auto', maxWidth: '100%'}}  src="public/presentacion.jpg" class="rounded float-end" alt="..."></img>
 
-    <Box style= {{display: 'flex', justifyContent :'center', marginTop: '50px'}}>
+    <Box   sx={{
+    display: 'flex',
+    justifyContent: 'center',
+    mt: '50px',
+    pr: 4
+  }}>
       <p>
         <h1 style={{fontWeight: 'bolder'}}>¿Qué hacemos?</h1>
         <p>
-          <ul>
+          <ul style={{fontSize :' 1.5vw'}}>
             <li>Diseño y cálculo de estructuras en Hormigón Armado</li>
             <li>Diseño y cálculo de estructuras en acero (galpones, naves, soportes, marcos, etc.)</li>
             <li>Memorias para viviendas y construcciones menores</li>

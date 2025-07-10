@@ -8,20 +8,27 @@ import Portafolio from "./Vista/Paginas/portafolio";
 
 function App() {
   return (
+
     <div style={{padding : 0}}>
       <Header />
-      <br />
+    <br />
 
-      <Principal/>
-      <br /><br />
+<section id="principal">
+  <Principal/>
+</section>
 
-
-
+     <br/><br />
+      
+<section id="proyectos">
 <Portafolio/>
+</section>
 
-<br /><br />
+     <br/><br />
 
-<Contacto></Contacto>
+<section id="contacto">
+<Contacto/>
+</section>
+
 
 <br /><br />
 
