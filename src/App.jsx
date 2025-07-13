@@ -10,6 +10,7 @@ import Panel from "./VistaAdmin/ComponenteEstatico/MenuPrincipal";
 import EdicionPrincipal from "./VistaAdmin/Paginas/EdicionPrincipal";
 import EdicionContacto from "./VistaAdmin/Paginas/EdicionContacto";
 import EdicionProyectos from "./VistaAdmin/Paginas/EdicionProyectos";
+import Login from "./VistaAdmin/ComponenteEstatico/Login";
 
 
 function PaginaPrincipal() {
@@ -55,6 +56,8 @@ function App() {
         <Route path="/" element={<PaginaPrincipal />} />
 
         {/* Panel con sub-rutas */}
+
+        <Route path="/admin" element={<Login/>} />
         <Route path="/panel" element={<Panel />}>
           <Route path="principal" element={<EdicionPrincipal />} />
           <Route path="contacto" element={<EdicionContacto />} />
