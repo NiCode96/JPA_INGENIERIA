@@ -2,6 +2,8 @@ import { Grid } from "@mui/material";
 import Acordeon from "../../ComponentesUI/Acordeon";
 import { useState, useEffect } from "react";
 
+
+
 export default function Contacto(){
 
 const [datos , setDatos] = useState(null);
@@ -9,7 +11,7 @@ const [datos , setDatos] = useState(null);
 
 useEffect(() => {
 
-  fetch("http://localhost:3000/api/contacto")
+ fetch(`${import.meta.env.VITE_API_URL}/api/contacto`)
   .then(res => res.json())
   .then(objetoJS => setDatos(objetoJS))
   .catch(err => console.log(`hubo un error el fetch de contacto ${err}`))

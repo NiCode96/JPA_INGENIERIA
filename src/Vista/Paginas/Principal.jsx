@@ -7,8 +7,7 @@ function Principal() {
   const [datos, setDatos] = useState(null);
 
   useEffect(() => {
-
-fetch("http://localhost:3000/api/principal")
+fetch(`${import.meta.env.VITE_API_URL}/api/principal`)
 .then(res => res.json())
 .then(objetoJS => setDatos(objetoJS))
 .catch(err => `No fue posible realizar la consulta al servidor.  ${err}`)
