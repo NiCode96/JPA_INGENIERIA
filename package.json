@@ -17,6 +17,7 @@
     "@mui/material": "^7.2.0",
     "@mui/styled-engine-sc": "^7.2.0",
     "bootstrap": "^5.3.7",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "mdb-react-ui-kit": "^9.0.0",

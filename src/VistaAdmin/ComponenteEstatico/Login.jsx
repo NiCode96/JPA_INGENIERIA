@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,22 +16,28 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
 
-
-
 export default function Login() {
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [mensaje, setMensaje] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!nombreUsuario || !contraseña) {
+      setMensaje("Por favor ingresa usuario y contraseña");
+      return;
+    }
+
+    console.log("Enviando:", { nombreUsuario, contraseña });
+
     try {
       const res = await fetch("http://localhost:3000/api/login", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+          headers: {
+            "Content-Type": "application/json",
+          },
         body: JSON.stringify({ nombreUsuario, contraseña }),
       });
 
@@ -38,16 +45,20 @@ export default function Login() {
 
       if (res.ok) {
         setMensaje(data.mensaje);
+        if (data.mensaje.toLowerCase() === "login correcto") {
+          // Guardamos el token para que PrivateRoute permita el acceso
+          localStorage.setItem("token", "1");
+          navigate("/panel");
+        }
       } else {
-        setMensaje(data.mensaje);
+        setMensaje(data.mensaje || "Error desconocido");
       }
     } catch (err) {
-      setMensaje(`${err}`);
+      console.error(err);
+      setMensaje("Error de conexión al servidor");
     }
   };
 
-
-  
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -58,7 +69,7 @@ export default function Login() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundImage: `url(/login.png)`,
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],

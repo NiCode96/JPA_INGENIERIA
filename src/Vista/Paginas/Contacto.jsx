@@ -1,10 +1,26 @@
 import { Grid } from "@mui/material";
 import Acordeon from "../../ComponentesUI/Acordeon";
+import { useState, useEffect } from "react";
 
 export default function Contacto(){
+
+const [datos , setDatos] = useState(null);
+
+
+useEffect(() => {
+
+  fetch("http://localhost:3000/api/contacto")
+  .then(res => res.json())
+  .then(objetoJS => setDatos(objetoJS))
+  .catch(err => console.log(`hubo un error el fetch de contacto ${err}`))
+
+}, [])
+
+
+
     return(
     
-     <Grid container spacing={2} style={{backgroundImage : "url('/contacto.jpg')", height :'400px' , backgroundSize :'cover', backgroundPosition :'center'}}>
+<Grid container spacing={2} style={{backgroundImage : "url('/contacto.jpg')", height :'400px' , backgroundSize :'cover', backgroundPosition :'center'}}>
 
 
 <Grid item xs ={6} style ={{ paddingLeft : '30px', paddingTop: '30px',fontSize : '3vh' }} >
@@ -12,9 +28,9 @@ export default function Contacto(){
     <h3 style={{fontWeight: 'bolder'}} >Contáctanos</h3>
 
 <ul style={{fontSize: '1.5vw' , fontWeight: 'bold'}}>
-  <li >Correo: <a  style={{listStyle: 'none', color: 'inherit' , textDecoration: 'none'}} href="https://mail.google.com">jpa.ingenieria.solutions@gmail.com</a> </li>
-  <li >Telefono: +569 7949 0233</li>
-  <li>Linkdin: <a style={{listStyle: 'none', color: 'inherit' , textDecoration: 'none'}} href="https://www.linkedin.com">www.linkedin.com/in/jpaingeniería</a></li>
+  <li >Correo:{datos ? datos.correo : 'cargando correo...'}</li>
+  <li >Telefono:{datos ? datos.telefono : 'cargando telefono...'}</li>
+  <li>Linkdin:{datos ? datos.linkedin : 'cargando linkedin...'}</li>
 </ul>
  
 

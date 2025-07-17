@@ -34,11 +34,13 @@ export default class Conexion {
   }
 
   static async getInstance() {
-    if (!this.instace) {
-      this.instace = new Conexion();
-      await this.instace.conectar();
+    if (!this.instance) {
+      const conexion = new Conexion();
+      await conexion.conectar();
+      this.instance = conexion;
+    } else if (!this.instance.conexion) {
+      await this.instance.conectar();
     }
-
-    return this.instace;
+    return this.instance;
   }
 }

@@ -1,4 +1,4 @@
-import Conexion from "./Conexion";
+import Conexion from "./Conexion.js";
 
 export default class Usuario {
   constructor(
@@ -65,12 +65,12 @@ export default class Usuario {
 
 
 static async loginUsuario(usuario, contraseña){
-  const conexion = Conexion.getInstance();
+  const conexiondb = await Conexion.getInstance();
   const consultaSQL = 'SELECT * FROM usuarios WHERE nombreUsuario = ?  AND  contraseña = ? ';
   const parametros = [usuario, contraseña];
 
   try {
-    const resultadoConsulta = (await conexion).ejecutar(consultaSQL, parametros)
+    const resultadoConsulta = await conexiondb.ejecutar(consultaSQL, parametros);
     
     if (resultadoConsulta.length > 0) {
       return true;
