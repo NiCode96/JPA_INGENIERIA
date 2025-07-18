@@ -22,7 +22,7 @@ export default function Portafolio(){
     return(
 
        
-        <Container><br /><br />
+        <Container style={{textAlign: 'center'}}><br /><br />
 
 <h1 style={{fontWeight: 'bolder'}}>Nuestros Proyectos</h1><br /><br />
       

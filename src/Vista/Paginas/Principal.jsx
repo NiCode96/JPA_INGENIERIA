@@ -48,11 +48,12 @@ fetch(`${import.meta.env.VITE_API_URL}/api/principal`)
     display: 'flex',
     justifyContent: 'center',
     mt: '50px',
-    pr: 4
+    pr: 10,
+    pl: 6
   }}>
       <p>
         <h1 style={{fontWeight: 'bolder'}}>¿Qué hacemos?</h1>
-        <p>
+        <p style={{fontSize :' 1.5vw', justifyContent: 'center'}}>
           {datos ? datos.queHacemos : 'Cargando informacion del servidor ...'}
 
         </p>
