@@ -24,7 +24,7 @@ export default function App() {
             <h5 className='text-uppercase'></h5>
 
 <img
-  src="public/usach.png"
+  src="/usach.png"
   alt=""
   className="img-fluid"
 />

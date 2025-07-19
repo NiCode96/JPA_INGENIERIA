@@ -20,7 +20,7 @@ function Header() {
         }}
       >
         <video
-          src="public/pre.mp4"
+          src="/pre.mp4"
           autoPlay
           muted
           loop

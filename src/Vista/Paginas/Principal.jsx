@@ -20,7 +20,7 @@ fetch(`${import.meta.env.VITE_API_URL}/api/principal`)
     <Container maxWidth="lg" style={{ marginTop: '20px' }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-    <img style={{width: '30%', height : 'auto', maxWidth: '100%'}} src="public/profesional.jpg" class="rounded float-start" alt="..."/> <br />
+    <img style={{width: '30%', height : 'auto', maxWidth: '100%'}} src="/profesional.jpg" class="rounded float-start" alt="..."/> <br />
     
     <Box style={{ display : 'flex', justifyContent: 'center'}} >
       <p style={{marginLeft: '100px'}}>
@@ -42,7 +42,7 @@ fetch(`${import.meta.env.VITE_API_URL}/api/principal`)
         </Grid>
         
         <Grid item xs={12} md={6}>
-    <img style={{width: '40%', height : 'auto', maxWidth: '100%'}}  src="public/presentacion.jpg" class="rounded float-end" alt="..."></img>
+    <img style={{width: '40%', height : 'auto', maxWidth: '100%'}}  src="/presentacion.jpg" class="rounded float-end" alt="..."></img>
 
     <Box   sx={{
     display: 'flex',
